@@ -16,10 +16,10 @@ function submitCreatePromises(e) {
 
    for (let i = 1; i <= amountVal; i++) {
     createPromise(i, delay)
-      .then(({ i, delay }) => {
+      .then(({ position, delay }) => {
         Notiflix.Notify.success(`✅ Fulfilled promise ${i} in ${delay}ms`);
       })
-      .catch(({ i, delay }) => {
+      .catch(({ position, delay }) => {
         Notiflix.Notify.failure(`❌ Rejected promise ${i} in ${delay}ms`);
       });
     delay += delayStepVal;
